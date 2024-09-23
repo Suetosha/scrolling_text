@@ -8,3 +8,4 @@
 1. Подключить базу данных SQLite для логирования запросов пользователей
 1. Обернуть приложение в docker, найти подходящий хостинг
 
+### Google Colab - [Ссылка на скрипт](https://colab.research.google.com/drive/16FOA88MnFcfX41ZZ1s4BZLkUv47S2YxH?usp=sharing)
