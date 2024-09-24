@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 from services.video_creator import create_video
 from wsgiref.util import FileWrapper
+from . import models
 
 
 class VideoTemplateView(TemplateView):
@@ -18,6 +19,11 @@ class VideoTemplateView(TemplateView):
         video = FileWrapper(open(video_name, 'rb'))
         response = HttpResponse(video, content_type='video/mp4')
         response['Content-Disposition'] = f'attachment; filename={video_name}'
+
+        text = models.VideoText(text=text)
+        text.save()
+
         fs = FileSystemStorage()
         fs.delete(video_name)
+
         return response
