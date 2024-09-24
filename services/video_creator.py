@@ -12,7 +12,7 @@ def create_video(text: str):
     name = f'{str(datetime.now().timestamp())}.mp4'
     fps = 24
     color = (255, 255, 255)
-    font = cv2.FONT_HERSHEY_DUPLEX
+    font = cv2.FONT_HERSHEY_COMPLEX
     font_scale = 2
     font_thickness = 3
 
