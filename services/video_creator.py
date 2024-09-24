@@ -33,7 +33,4 @@ def create_video(text: str):
     out_video.release()
     cv2.destroyAllWindows()
 
-
-create_video(text='test')
-
-
+    return name
