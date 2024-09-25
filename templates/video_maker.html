@@ -1,10 +1,33 @@
-<!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Создание видео</title>
+    <link href="{% static 'main/css/bootstrap.min.css' %}" rel="stylesheet" />
 </head>
 <body>
-
+    <div class="container position-absolute top-50 start-50 translate-middle">
+        <div class="row text-center">
+            <form method="post">
+                {% csrf_token %}
+                    {% for field in form %}
+                        <h3 class="mt-1 mb-2">
+                            {{ field.label }}
+                        </h3>
+                        <div class="mt-1 mb-2">
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+                <div class="mt-1 mb-2">
+                    <input type="submit" class="btn btn-primary" value="Отправить текст">
+                </div>
+            </form>
+        </div>
+        <div class="row text-center">
+            <h5>Текст можно передать как query параметр</h5>
+            <h5>Пример: http://127.0.0.1:8000/video_maker?text=test</h5>
+        </div>
+    </div>
 </body>
 </html>
