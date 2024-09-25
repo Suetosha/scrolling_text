@@ -7,7 +7,8 @@ SECRET_KEY = 'django-insecure-xz-wg^urr7l^sw5%9c(gm0uteqixbuy@1sy0vrc@76dtk=lwbg
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['scrolling-text.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://scrolling-text.onrender.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
